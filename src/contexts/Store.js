@@ -15,10 +15,11 @@ export const StoreProvider = ({ children }) => {
 
   // TODO: Update the method below to return the latest featured article from the list of articles
   const getFeatured = (arr) => {
+    // 'results' holds an array of 3 objects, they are all featured articles
     let results = arr.filter((el) => {
       return el.fields.featured === true;
     });
-
+    // 'result' holds an object of the latest among the 3 featured article above
     let result = results.reduce(
       (acc, curr) => {
         if (
@@ -29,7 +30,8 @@ export const StoreProvider = ({ children }) => {
       },
       { fields: { date: 0 } }
     );
-    console.log("🚀 ~ result", result);
+
+    //At the end, the function will return the result object, which will be used in Featured.js component.
     return result;
   };
 

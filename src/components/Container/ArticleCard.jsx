@@ -24,6 +24,7 @@ const Wrap = styled.div`
   margin: 0 10px 30px;
   display: flex;
   flex-flow: column;
+  background-color: white;
 `;
 
 const ImageWrap = styled.div`
@@ -60,6 +61,7 @@ const H2 = styled.h2`
 const Categories = styled.p`
   align-self: flex-start;
   justify-self: flex-end;
+  margin: 0 0 20px 30px;
   &a {
     color: black;
     text-decoration: none;

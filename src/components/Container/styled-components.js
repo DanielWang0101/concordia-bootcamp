@@ -5,6 +5,4 @@ export const Box = styled.div`
   max-width: 1168px;
   padding: 0 20px;
   margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
 `;

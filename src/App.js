@@ -5,6 +5,9 @@ import Container from "./components/Container";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ArticleCard from "./components/Container/ArticleCard";
+import styled from "styled-components";
+import Featured from "./components/Container/Featured";
+
 function App() {
   const store = useStore();
   const { featuredArticle, getFeaturedArticle: getFeatured, articles } = store;
@@ -19,14 +22,18 @@ function App() {
 
         {/* TODO: Blog things goes here. Use the components folder! */}
         <Container>
-          {articles
-            .filter((item) => {
-              return item.fields.featured === false;
-            })
-            .map((el) => {
-              return <ArticleCard el={el} />;
-            })}
-          <h1>Hello 🌎</h1>
+          <H1>Blog</H1>
+          <Wrap>
+            <Featured />
+
+            {articles
+              .filter((item) => {
+                return item.fields.featured === false;
+              })
+              .map((el) => {
+                return <ArticleCard el={el} />;
+              })}
+          </Wrap>
         </Container>
 
         <Footer />
@@ -35,4 +42,17 @@ function App() {
   );
 }
 
+const Wrap = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  background: linear-gradient(to top, #ffefe200 0%, #ffefe2 10%);
+
+  width: 100%;
+`;
+
+const H1 = styled.h1`
+  margin: 40px 0;
+  font-size: 30px;
+  line-height: 36px;
+`;
 export default App;
