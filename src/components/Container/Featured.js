@@ -22,23 +22,28 @@ const Featured = () => {
 };
 
 const Wrap = styled.div`
-  float: left;
-  margin-bottom: 0;
-  height: auto;
-  width: 100%;
   display: flex;
-  flex-flow: column;
+  flex-flow: row nowrap;
+  margin-bottom: 0;
+  height: 450px;
+  width: 100%;
+
   background-color: white;
   border-top: solid 3px #212020;
   display: flex;
   margin-bottom: 20px;
   border-bottom: solid 3px #212020;
   padding: 40px 0;
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-flow: column;
+    height: auto;
+  }
 `;
 
 const ImageWrap = styled.div`
-  height: 180px;
-
+  height: auto;
+  width: 100%;
   &a {
     color: black;
     text-decoration: none;
@@ -63,7 +68,10 @@ const BodyWrap = styled.div`
   width: 100%;
   float: left;
   padding: 5px 20px 20px 30px;
-
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
   &::after {
     clear: both;
   }
@@ -72,6 +80,7 @@ const BodyWrap = styled.div`
     color: #212020;
     font-weight: 600;
     margin: 16px 0;
+    font-size: 2rem;
     @media (max-width: 1024px) {
       font-size: 24px;
       line-height: 28px;
