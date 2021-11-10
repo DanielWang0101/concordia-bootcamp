@@ -21,31 +21,42 @@ function App() {
         <Header />
 
         {/* TODO: Blog things goes here. Use the components folder! */}
-        <Container>
-          <H1>Blog</H1>
-          <Wrap>
-            <Featured />
+        <BigWrap>
+          <Container>
+            <H1>Blog</H1>
+            <Wrap>
+              <Featured />
 
-            {articles
-              .filter((item) => {
-                return item.fields.featured === false;
-              })
-              .map((el) => {
-                return <ArticleCard el={el} />;
-              })}
-          </Wrap>
-        </Container>
+              {articles
+                .filter((item) => {
+                  return item.fields.featured === false;
+                })
+                .map((el) => {
+                  return <ArticleCard el={el} />;
+                })}
+            </Wrap>
+          </Container>
 
-        <Footer />
+          <Footer />
+        </BigWrap>
       </main>
     </>
   );
 }
 
+const BigWrap = styled.div`
+  background: linear-gradient(
+    to top,
+    #ffefe200 0%,
+    #ffefe2 20%,
+    #ffefe2 70%,
+    #ffefe200 100%
+  );
+`;
+
 const Wrap = styled.div`
   display: flex;
   flex-flow: row wrap;
-  background: linear-gradient(to top, #ffefe200 0%, #ffefe2 10%);
 
   width: 100%;
 `;
